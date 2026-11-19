@@ -1,7 +1,7 @@
 def reserve_inventory(products, order):
     for item in order["items"]:
         product = next((p for p in products if p["id"] == item["product_id"]), None)
-        if product is not None:
+        if product is not None and product["stock"] > 0:
             product["stock"] -= 1
 
 
