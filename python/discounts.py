@@ -13,7 +13,7 @@ def coupon_discount_amount(coupon_code, subtotal):
         return subtotal * 0.90
 
     if code == "FIVEOFF":
-        return subtotal * 0.05
+        return subtotal * 0.95
 
     return 0
 
@@ -26,7 +26,7 @@ def bulk_discount_amount(items, products):
         if product is None:
             continue
 
-        if item["quantity"] > BULK_DISCOUNT_THRESHOLD:
+        if item["quantity"] >= BULK_DISCOUNT_THRESHOLD:
             line_total = product["price"] * item["quantity"]
             discount += line_total * BULK_DISCOUNT_RATE
 
