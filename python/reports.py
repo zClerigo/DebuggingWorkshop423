@@ -1,8 +1,9 @@
 def find_product_by_name(products, name):
-    for product in products:
-        name.trim()
-        if product["name"].lower() == name.lower():
-            return product
+    if isinstance(name, str):
+        name = name.trim()
+        for product in products:
+            if product["name"].lower() == name.lower():
+                return product
     return None
 
 
