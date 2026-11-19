@@ -1,6 +1,6 @@
 def find_product_by_name(products, name):
     if isinstance(name, str):
-        name = name.trim()
+        name = name.strip()
         for product in products:
             if product["name"].lower() == name.lower():
                 return product
